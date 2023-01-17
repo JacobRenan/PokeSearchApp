@@ -10,8 +10,8 @@
         display: flex;
         background: var(--branco);
 
-        width: 50%;
-        height: rem-calc(157);
+        width: calc(49% - 2.5rem);
+        height: rem-calc(157 - 40);
         padding: rem-calc(20);
 
         border-radius: rem-calc(10);
