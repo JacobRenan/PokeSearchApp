@@ -4,6 +4,8 @@
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    padding: rem-calc(20) 0;
 
     .pokemon{
         position: relative;
@@ -12,8 +14,9 @@
 
         width: calc(49% - 2.5rem);
         height: rem-calc(157 - 40);
+        
+        margin-bottom: rem-calc(10);
         padding: rem-calc(20);
-
         border-radius: rem-calc(10);
 
         &__status{
