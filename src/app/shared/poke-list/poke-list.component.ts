@@ -11,7 +11,7 @@ export class PokeListComponent implements OnInit {
   constructor(private api:PokeApiService){}
   
   ngOnInit(): void {
-    this.api.apiPoke.subscribe(res => res);
+    this.api.apiPoke.subscribe(res => console.log(res));
   }
 
 }
