@@ -8,32 +8,32 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
-  // no constructor é feita uma injeção de dependencia do service
-  // para que ela busque os valores necessários, a função subscribe() é chamada dentro de ngOnInit
-  
-  constructor(private api:PokeApiService){}
-
-  public apiError: boolean = false;
   private setAllPokemons: any;
   public getAllPokemons: any;
-  
+
+  public apiError: boolean = false;
+
+  constructor(
+    private pokeApiService: PokeApiService
+  ) { }
+
   ngOnInit(): void {
-    this.api.apiListAllPokemons.subscribe(
-        res => {
-          this.setAllPokemons = res.results
-          this.getAllPokemons = this.setAllPokemons;
-          
-        },
-        error=> {this.apiError = true})
-        
+    this.pokeApiService.apiListAllPokemons.subscribe(
+      res => {
+        this.setAllPokemons = res.results;
+        this.getAllPokemons = this.setAllPokemons;
+      },
+      error => {
+        this.apiError = true;
+      }
+    );
   }
 
-  public getSearch(value:string){
-    const filter = this.setAllPokemons.filter((res:any ) => {
-      return !res.name.indexOf(value.toLocaleLowerCase())
-    })    
+  public getSearch(value: string){
+    const filter = this.setAllPokemons.filter( (res: any ) => {
+      return !res.name.indexOf(value.toLowerCase());
+    });
 
-    this.getAllPokemons=filter
+    this.getAllPokemons = filter;
   }
-
 }

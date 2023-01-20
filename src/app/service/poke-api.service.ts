@@ -10,7 +10,7 @@ export class PokeApiService {
 
   constructor(private http:HttpClient) { }
 
-  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100';
+  private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
 
  /// o método get é de TS e a vantagem é que não precisa da sintaxe de chamar a função
  // o get<any>(url) puxa todas as informações da url e o .pipe filtra as informações de acordo com a demanda 

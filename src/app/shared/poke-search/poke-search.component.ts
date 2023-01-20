@@ -7,7 +7,7 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 })
 export class PokeSearchComponent implements OnInit {
 
-  @Output() public emitSearch: EventEmitter<any> = new EventEmitter();
+  @Output() public emitSearch: EventEmitter<string> = new EventEmitter();
 
   ngOnInit(): void{
   }
