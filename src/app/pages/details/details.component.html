@@ -4,23 +4,24 @@
 
   <ng-template [ngIf]="isLoading">
     <section class="pokemon__names">
-      <h1 class="slideInLeft">{{pokemon.names}}</h1>
-      <h2 class="slideInRight">{{pokemon[1].names[0].name}}</h2>
+      <h1 class="slideInLeft">{{pokemon?.name}}</h1>
+      <h2 class="slideInRight">{{name.names[0].name}}</h2>
     </section>
 
     <section class="pokemon__status">
       <img
-        [src]="pokemon[0].sprites.other.dream_world.front_default"
-        [alt]="pokemon[0].name"
+        [src]="pokemon.sprites.other.dream_world.front_default"
+        [alt]="pokemon.name"
         class="slideInDown"
       >
 
       <article class="pokemon__status__statistics fadeIn">
+        
         <section>
           <h3>Estatísticas</h3>
 
           <ol>
-            <li *ngFor="let value of pokemon[0].stats">
+            <li *ngFor="let value of pokemon.stats">
                 {{ value.stat.name }}
 
               <strong>
@@ -35,6 +36,7 @@
         </a>
       </article>
     </section>
+  
   </ng-template>
 
   <img

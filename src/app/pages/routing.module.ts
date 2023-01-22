@@ -6,10 +6,12 @@ import { DetailsComponent } from './details/details.component';
 //crair um lazy Loading
 const routes: Routes = [
   {
-    path:'', component: HomeComponent
+    path:'', 
+    component: HomeComponent
   },
   {
-    path:'details/:id', component: DetailsComponent
+    path:'details/:id', 
+    component: DetailsComponent
   }
 ];
 
